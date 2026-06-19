@@ -1,20 +1,30 @@
 import streamlit as st
 
-# Page SEO
+# Page Config
 st.set_page_config(
-    page_title="CGPA to Percentage Calculator - Free Online Tool",
+    page_title="CGPA to Percentage Calculator | Free Online Tool for Students",
     page_icon="🎓",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="collapsed"
 )
 
-# SEO Content
+# SEO META (Streamlit HTML injection)
+st.markdown("""
+<meta name="description" content="Free CGPA to Percentage Calculator for students. Convert CGPA to percentage using standard formulas like ×9.5, ×10, and university rules. Fast, accurate and mobile friendly tool.">
+<meta name="keywords" content="CGPA to percentage calculator, CGPA calculator, GPA to percentage, percentage calculator for students, convert CGPA to percentage, CGPA × 9.5, CGPA × 10">
+<meta name="author" content="CGPA Calculator Tool">
+""", unsafe_allow_html=True)
+
+# Header
 st.title("🎓 CGPA to Percentage Calculator")
-st.write(
-    "Convert CGPA to Percentage instantly using the standard formula. "
-    "This free online CGPA to Percentage Calculator helps students calculate academic percentages accurately."
-)
+st.write("""
+👉 Convert your CGPA into percentage instantly using standard academic formulas.  
+✔ Fast calculation  
+✔ Mobile friendly  
+✔ Free for all students  
+""")
 
-# Calculator
+# Input
 cgpa = st.number_input(
     "Enter Your CGPA",
     min_value=0.0,
@@ -22,84 +32,86 @@ cgpa = st.number_input(
     step=0.01
 )
 
+# Formula selection
 formula = st.selectbox(
     "Select Conversion Formula",
     [
-        "Percentage = CGPA × 9.5",
-        "Percentage = (CGPA - 0.5) × 10",
-        "Percentage = CGPA × 10"
+        "Percentage = CGPA × 9.5 (Most Common)",
+        "Percentage = CGPA × 10 (Engineering)",
+        "Percentage = (CGPA − 0.5) × 10"
     ]
 )
 
-if st.button("Calculate Percentage"):
+# Calculation logic (FIXED)
+def calculate(cgpa, formula):
 
-    if formula == "Percentage = CGPA × 9.5":
-        percentage = cgpa * 9.5
+    if formula == "Percentage = CGPA × 9.5 (Most Common)":
+        return cgpa * 9.5
 
-    elif formula == "CGPA × 10":
-        percentage = cgpa * 10
+    elif formula == "Percentage = CGPA × 10 (Engineering)":
+        return cgpa * 10
 
-    elif formula == "(CGPA − 0.5) × 10":
-        percentage = (cgpa - 0.5) * 10
+    elif formula == "Percentage = (CGPA − 0.5) × 10":
+        return (cgpa - 0.5) * 10
 
-    else:
-        percentage = cgpa * 9.5  # fallback safe default
+    return cgpa * 9.5  # safe fallback
 
-    st.success(f"Percentage: {percentage:.2f}%")
+# Button
+if st.button("🚀 Calculate Percentage"):
 
-# Quick Table
-st.subheader("CGPA to Percentage Chart")
+    percentage = calculate(cgpa, formula)
 
-table_data = {
-    "CGPA": [6, 7, 8, 8.5, 9, 9.5, 10],
-    "Percentage": [
-        57.0,
-        66.5,
-        76.0,
-        80.75,
-        85.5,
-        90.25,
-        95.0
-    ]
-}
+    st.success(f"🎯 Your Percentage: {percentage:.2f}%")
 
-st.table(table_data)
+    st.info(f"""
+    Calculation used:  
+    {formula}  
+    Result: {percentage:.2f}%
+    """)
 
-# SEO Content
-st.header("How to Convert CGPA to Percentage?")
+# SEO Content Section (Humanized)
+st.markdown("---")
+
+st.header("📘 What is CGPA to Percentage Conversion?")
 
 st.write("""
-The most commonly used formula is:
+CGPA (Cumulative Grade Point Average) is a grading system used in schools and universities.
 
-**Percentage = CGPA × 9.5**
+To convert CGPA into percentage, different institutions use different formulas:
 
-For example:
+- Most common formula: CGPA × 9.5  
+- Engineering colleges: CGPA × 10  
+- Some universities: (CGPA − 0.5) × 10  
 
-- CGPA = 8.0
-- Percentage = 8.0 × 9.5
-- Percentage = 76%
-
-Different universities may use different conversion formulas.
-Always check your university guidelines.
+This tool helps you calculate instantly without confusion.
 """)
 
-# FAQ Schema Style Content
-st.header("Frequently Asked Questions")
+# Example Section
+st.subheader("📊 Example Calculation")
+
+st.write("""
+If your CGPA is 8.0:
+
+- Using ×9.5 → 76%
+- Using ×10 → 80%
+- Using (−0.5)×10 → 75%
+""")
+
+# FAQ
+st.header("❓ Frequently Asked Questions")
 
 with st.expander("What is CGPA?"):
-    st.write(
-        "CGPA stands for Cumulative Grade Point Average. "
-        "It measures a student's academic performance."
-    )
+    st.write("CGPA stands for Cumulative Grade Point Average used to measure academic performance.")
 
-with st.expander("How do I convert CGPA into Percentage?"):
-    st.write(
-        "Use the formula Percentage = CGPA × 9.5 unless your university specifies another formula."
-    )
+with st.expander("Which formula should I use?"):
+    st.write("Use CGPA × 9.5 unless your university specifies otherwise.")
 
-with st.expander("Is this calculator free?"):
-    st.write("Yes, this CGPA to Percentage Calculator is completely free.")
+with st.expander("Is this calculator accurate?"):
+    st.write("Yes, it uses standard academic conversion formulas.")
 
-# Footer
+with st.expander("Is this free?"):
+    st.write("Yes, 100% free for students.")
+
+# Footer SEO
 st.markdown("---")
-st.caption("© 2026 CGPA to Percentage Calculator")
+st.caption("© 2026 CGPA to Percentage Calculator | Built for Students")
