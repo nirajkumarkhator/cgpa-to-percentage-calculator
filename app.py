@@ -28,15 +28,8 @@ This tool is fast, mobile friendly, and designed for students.
 """)
 
 # 👉 SPPU PAGE LINK (NEW ADDITION)
-st.markdown("""
-### University Specific Calculator
-
-If you are from Savitribai Phule Pune University (SPPU), use the dedicated calculator:
-
-👉 [Open SPPU CGPA Calculator](sppu)
-
----
-""")
+st.markdown("### University Calculator")
+st.page_link("sppu", label="Open SPPU Calculator")
 
 # Input
 cgpa = st.number_input(
