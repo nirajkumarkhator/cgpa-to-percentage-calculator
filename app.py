@@ -27,9 +27,13 @@ Convert your CGPA into percentage instantly using standard academic formulas.
 This tool is fast, mobile friendly, and designed for students.
 """)
 
-# 👉 SPPU PAGE LINK (NEW ADDITION)
 st.markdown("### University Calculator")
-st.page_link("sppu", label="Open SPPU Calculator")
+
+st.markdown("""
+<div style="padding:10px; border:1px solid #ddd; border-radius:10px;">
+    👉 <a href="sppu" target="_self">Open SPPU CGPA Calculator</a>
+</div>
+""", unsafe_allow_html=True)
 
 # Input
 cgpa = st.number_input(
