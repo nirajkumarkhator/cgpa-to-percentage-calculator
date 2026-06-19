@@ -10,6 +10,7 @@ st.set_page_config(
 
 # SEO META (Streamlit HTML injection)
 st.markdown("""
+<meta name="google-site-verification" content="bE4LnfEmR_kVKm_yJ1fKTbzhlo8OAoyqCVBrfD55VFg" />
 <meta name="description" content="Free CGPA to Percentage Calculator for students. Convert CGPA to percentage using standard formulas like ×9.5, ×10, and university rules. Fast, accurate and mobile friendly tool.">
 <meta name="keywords" content="CGPA to percentage calculator, CGPA calculator, GPA to percentage, percentage calculator for students, convert CGPA to percentage, CGPA × 9.5, CGPA × 10">
 <meta name="author" content="CGPA Calculator Tool">
