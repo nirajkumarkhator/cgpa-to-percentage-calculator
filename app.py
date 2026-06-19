@@ -16,7 +16,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.title("🎓 CGPA to Percentage Calculator")
+st.title("CGPA to Percentage Calculator")
 st.write("""
 👉 Convert your CGPA into percentage instantly using standard academic formulas.  
 ✔ Fast calculation  
@@ -72,7 +72,7 @@ if st.button("🚀 Calculate Percentage"):
 # SEO Content Section (Humanized)
 st.markdown("---")
 
-st.header("📘 What is CGPA to Percentage Conversion?")
+st.header("What is CGPA to Percentage Conversion?")
 
 st.write("""
 CGPA (Cumulative Grade Point Average) is a grading system used in schools and universities.
@@ -87,7 +87,7 @@ This tool helps you calculate instantly without confusion.
 """)
 
 # Example Section
-st.subheader("📊 Example Calculation")
+st.subheader("Example Calculation")
 
 st.write("""
 If your CGPA is 8.0:
@@ -98,7 +98,7 @@ If your CGPA is 8.0:
 """)
 
 # FAQ
-st.header("❓ Frequently Asked Questions")
+st.header("Frequently Asked Questions")
 
 with st.expander("What is CGPA?"):
     st.write("CGPA stands for Cumulative Grade Point Average used to measure academic performance.")
