@@ -1,2 +1,3 @@
-# cgpa-to-percentage-calculator
-cgpa-to-percentage-calculator
+# CGPA to Percentage Calculator
+
+Free online CGPA to Percentage Calculator built with Streamlit.
