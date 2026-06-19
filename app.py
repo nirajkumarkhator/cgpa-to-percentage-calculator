@@ -35,7 +35,7 @@ if st.button("Calculate Percentage"):
     if formula == "Percentage = CGPA × 9.5":
         percentage = cgpa * 9.5
     elif formula == "CGPA × 10":
-        percentage = (cgpa - 0.5) * 10
+        percentage = cgpa * 10
     else:
         percentage = (cgpa - 0.5) * 10
 
