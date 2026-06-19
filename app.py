@@ -16,13 +16,26 @@ st.markdown("""
 <meta name="author" content="CGPA Calculator Tool">
 """, unsafe_allow_html=True)
 
+# LOGO (NEW ADDITION)
+st.image("assets/logo.png", width=120)
+
 # Header
 st.title("CGPA to Percentage Calculator")
+
 st.write("""
-👉 Convert your CGPA into percentage instantly using standard academic formulas.  
-✔ Fast calculation  
-✔ Mobile friendly  
-✔ Free for all students  
+Convert your CGPA into percentage instantly using standard academic formulas.  
+This tool is fast, mobile friendly, and designed for students.
+""")
+
+# 👉 SPPU PAGE LINK (NEW ADDITION)
+st.markdown("""
+### University Specific Calculator
+
+If you are from Savitribai Phule Pune University (SPPU), use the dedicated calculator:
+
+👉 [SPPU CGPA to Percentage Calculator](SPPU_CGPA)
+
+---
 """)
 
 # Input
@@ -43,7 +56,7 @@ formula = st.selectbox(
     ]
 )
 
-# Calculation logic (FIXED)
+# Calculation logic
 def calculate(cgpa, formula):
 
     if formula == "Percentage = CGPA × 9.5 (Most Common)":
@@ -65,26 +78,25 @@ if st.button("🚀 Calculate Percentage"):
     st.success(f"🎯 Your Percentage: {percentage:.2f}%")
 
     st.info(f"""
-    Calculation used:  
-    {formula}  
-    Result: {percentage:.2f}%
-    """)
+Calculation Used:  
+{formula}  
 
-# SEO Content Section (Humanized)
+Final Result: {percentage:.2f}%
+""")
+
+# SEO CONTENT
 st.markdown("---")
 
 st.header("What is CGPA to Percentage Conversion?")
 
 st.write("""
-CGPA (Cumulative Grade Point Average) is a grading system used in schools and universities.
+CGPA (Cumulative Grade Point Average) is a widely used academic grading system in schools and universities.
 
-To convert CGPA into percentage, different institutions use different formulas:
+Different institutions use different formulas to convert CGPA into percentage. The most common methods include CGPA multiplied by 9.5, CGPA multiplied by 10, and adjusted formulas such as (CGPA − 0.5) × 10.
 
-- Most common formula: CGPA × 9.5  
-- Engineering colleges: CGPA × 10  
-- Some universities: (CGPA − 0.5) × 10  
+This calculator helps students quickly convert CGPA into percentage without manual calculations or confusion. It is especially useful for job applications, higher education admissions, and competitive exams where percentage marks are required.
 
-This tool helps you calculate instantly without confusion.
+Since universities may follow different conversion rules, users should always check their official guidelines. However, this tool provides a fast and reliable estimation based on commonly accepted academic formulas.
 """)
 
 # Example Section
