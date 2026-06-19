@@ -26,13 +26,16 @@ formula = st.selectbox(
     "Select Conversion Formula",
     [
         "Percentage = CGPA × 9.5",
-        "Percentage = (CGPA - 0.5) × 10"
+        "Percentage = (CGPA - 0.5) × 10",
+        "Percentage = CGPA × 10"
     ]
 )
 
 if st.button("Calculate Percentage"):
     if formula == "Percentage = CGPA × 9.5":
         percentage = cgpa * 9.5
+    elif formula == "CGPA × 10":
+        percentage = (cgpa - 0.5) * 10
     else:
         percentage = (cgpa - 0.5) * 10
 
