@@ -32,12 +32,18 @@ formula = st.selectbox(
 )
 
 if st.button("Calculate Percentage"):
+
     if formula == "Percentage = CGPA × 9.5":
         percentage = cgpa * 9.5
+
     elif formula == "CGPA × 10":
         percentage = cgpa * 10
-    else:
+
+    elif formula == "(CGPA − 0.5) × 10":
         percentage = (cgpa - 0.5) * 10
+
+    else:
+        percentage = cgpa * 9.5  # fallback safe default
 
     st.success(f"Percentage: {percentage:.2f}%")
 
